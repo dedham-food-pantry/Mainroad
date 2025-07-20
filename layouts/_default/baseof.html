@@ -28,12 +28,12 @@
 	<link rel="stylesheet" {{ printf `href="%s"` $googleFontsLink | safeHTMLAttr }}>
 	{{- end }}
 
-	{{ $style := resources.Get "css/style.css" | resources.ExecuteAsTemplate "css/style.css" . -}}
-	<link rel="stylesheet" href="{{ $style.RelPermalink }}">
-	{{ range .Site.Params.customCSS -}}
-	{{ $custom := resources.Get . -}}
-	<link rel="stylesheet" href="{{ $custom.RelPermalink }}">
-	{{- end }}
+	{{- $CSS := slice (resources.Get "css/style.css" | resources.ExecuteAsTemplate "css/style.css" .) -}}
+	{{- range .Site.Params.customCSS -}}
+	{{- $CSS = $CSS | collections.Append (resources.Get .) -}}
+	{{- end -}}
+	{{- $CSS = $CSS | resources.Concat "css/styles.css" | fingerprint -}}
+	<link rel="stylesheet" href="{{ $CSS.RelPermalink }}" media="all">
 
 	{{- with .OutputFormats.Get "rss" }}
 	{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
