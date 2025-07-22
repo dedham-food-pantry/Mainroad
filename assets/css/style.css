@@ -145,7 +145,7 @@ textarea {
 }
 
 /* Animation */
-.menu__item,
+nav.menu li,
 .btn {
 	transition: background-color .25s ease-out;
 }
@@ -450,130 +450,75 @@ select {
 }
 
 /* Main menu */
-.no-js .menu__btn {
-	display: none;
+/* https://www.sitepoint.com/pure-css-off-screen-navigation-menu/ */
+nav.menu input {
+  /* critical styles - hide the checkbox input */
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
 }
 
-.menu__btn {
+nav.menu label {
 	display: block;
 	width: 100%;
-	padding: 0;
-	font: inherit;
 	color: #fff;
 	background: #2a2a2a;
 	border: 0;
 	outline: 0;
-}
-
-.menu__btn-title {
 	position: relative;
-	display: block;
-	padding: 10px 15px;
 	padding: .625rem .9375rem;
 	font-weight: 700;
 	text-align: right;
 	text-transform: uppercase;
 	cursor: pointer;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	-o-user-select: none;
 	user-select: none;
 }
 
-:focus > .menu__btn-title {
-	box-shadow: inset 0 0 1px 3px {{ $highlightColor }};
+nav.menu ul {
+	list-style: none;
+	background: #2a2a2a;
+	display: none;
 }
 
-button:not(:-moz-focusring):focus > .menu__btn-title {
-	box-shadow: none;
+nav.menu ul li:hover {
+	background: {{ $highlightColor }};
 }
 
-.menu__btn:focus,
-.menu__btn-title:focus {
-	outline: 0;
-}
-
-.js .menu__btn--active {
+nav.menu input:checked + label {
 	color: {{ $highlightColor }};
 }
 
-.menu__list {
-	list-style: none;
-	background: #2a2a2a;
-}
-
-.menu__item:hover {
+nav.menu li.active {
 	background: {{ $highlightColor }};
 }
 
-.menu__item:first-child {
-	border: 0;
-}
-
-.menu__item--active {
-	background: {{ $highlightColor }};
-}
-
-.menu__link {
+nav.menu input:checked ~ ul {
 	display: block;
-	padding: 10px 15px;
+	color: {{ $highlightColor }};
+}
+
+nav.menu a {
+	display: block;
 	padding: .625rem .9375rem;
 	font-weight: 700;
 	color: #fff;
 	text-transform: uppercase;
 }
 
-.menu__link:hover {
-	color: #fff;
-}
-
-.js .menu__list {
-	position: absolute;
-	z-index: 1;
-	width: 100%;
-	visibility: hidden;
-	-webkit-transform: scaleY(0);
-	transform: scaleY(0);
-	-webkit-transform-origin: top left;
-	transform-origin: top left;
-}
-
-.js .menu__list--active {
-	visibility: visible;
-	border-top: 1px solid rgba(255, 255, 255, .1);
-	border-bottom: 1px solid rgba(255, 255, 255, .1);
-	-webkit-transform: scaleY(1);
-	transform: scaleY(1);
-}
-
-.menu__list--transition {
-	transition: visibility .15s ease, transform .15s ease, -webkit-transform .15s ease;
-}
-
 @media screen and (min-width: 767px) {
-	.menu {
-		border-bottom: 5px solid {{ $highlightColor }};
-	}
-
-	.menu__btn {
+	nav.menu input, nav.menu label {
 		display: none;
 	}
 
-	.menu__list,
-	.js .menu__list {
+	nav.menu ul {
 		position: relative;
-		display: -webkit-flex;
 		display: flex;
-		-webkit-flex-wrap: wrap;
 		flex-wrap: wrap;
 		visibility: visible;
 		border: 0;
-		-webkit-transform: none;
 		transform: none;
 	}
 
-	.menu__item {
+	nav.menu li {
 		border-left: 1px solid rgba(255, 255, 255, .1);
 	}
 }
