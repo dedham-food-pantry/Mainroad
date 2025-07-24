@@ -1267,3 +1267,18 @@ textarea {
 		font-size: .6875rem;
 	}
 }
+
+@media print {
+	.logo--mixed img.logo__img {
+		max-width: 64px;
+		max-height: 64px;
+	}
+
+  nav.menu, div.logo__tagline, footer {
+    display: none !important;
+  }
+
+  .container--outer {
+    box-shadow: none;
+  }
+}
