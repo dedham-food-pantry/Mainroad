@@ -49,9 +49,9 @@
 		{{ template "_internal/google_analytics.html" . }}
 	{{- end }}
 </head>
-<body class="body">
+<body>
+	{{ block "header" . }}{{ partial "header.html" . }}{{ end }}
 	<div class="container container--outer">
-		{{ block "header" . }}{{ partial "header.html" . }}{{ end }}
 		<div class="wrapper flex">
 			<div class="primary">
 			{{ block "main" . }}
@@ -64,8 +64,8 @@
 			</div>
 			{{ block "sidebar" . }}{{ partial "sidebar.html" . }}{{ end }}
 		</div>
-		{{ block "footer" . }}{{ partial "footer.html" . }}{{ end }}
 	</div>
+	{{ block "footer" . }}{{ partial "footer.html" . }}{{ end }}
 {{ range .Site.Params.customJS -}}
 <script src="{{ . | relURL }}"></script>
 {{- end }}

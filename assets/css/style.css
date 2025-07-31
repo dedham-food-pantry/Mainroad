@@ -66,11 +66,6 @@ body {
 	margin: 0 auto;
 }
 
-.container--outer {
-	margin: 25px auto;
-	box-shadow: 0 0 10px rgba(50, 50, 50, .17);
-}
-
 .wrapper {
 	padding: 25px;
 	background: #fff;
@@ -384,15 +379,12 @@ select {
 }
 
 /* Header */
-.header {
-	background: #fff;
-}
-
-.logo {
-	padding: 25px;
+nav {
+	border-bottom: 5px solid {{ $highlightColor }};
 }
 
 .logo__link {
+	padding: 10px;
 	display: inline-block;
 }
 
@@ -401,8 +393,8 @@ select {
 	vertical-align: middle;
 }
 
-.logo__img {
-	max-height: 256px;
+.logo__link img {
+	max-height: 75px;
 }
 
 .logo__text {
@@ -411,11 +403,6 @@ select {
 
 .logo--mixed .logo__item {
 	margin: .5rem auto;
-}
-
-.logo--mixed .logo__img {
-	max-width: 128px;
-	max-height: 128px;
 }
 
 .logo--mixed .logo__text {
@@ -1104,7 +1091,7 @@ textarea {
 }
 
 /* Footer */
-.footer {
+footer {
 	padding: 10px 25px;
 	font-size: 12px;
 	font-size: .75rem;
@@ -1113,39 +1100,21 @@ textarea {
 	border-top: 3px solid #999;
 }
 
-.footer__container {
-	-webkit-flex-flow: row wrap;
-	flex-flow: row wrap;
-	-webkit-justify-content: space-between;
-	justify-content: space-between;
-}
-
 .footer__links {
 	-webkit-order: 1;
 	order: 1;
 }
 
-.footer a {
+footer a {
 	color: #fff;
 }
 
-.footer a:hover {
+footer a:hover {
 	text-decoration: underline;
 }
 
 /* Media Queries */
-@media screen and (max-width: 1475px) {
-	.container--outer {
-		width: 95%;
-	}
-}
-
 @media screen and (max-width: 900px) {
-	.container--outer {
-		width: 100%;
-		margin: 0 auto;
-	}
-
 	.wrapper,
 	.logo {
 		padding: 20px;
@@ -1153,10 +1122,6 @@ textarea {
 
 	.widget {
 		margin-bottom: 20px;
-	}
-
-	.footer__container {
-		display: block;
 	}
 
 	.footer__links {
@@ -1200,6 +1165,11 @@ textarea {
 }
 
 @media screen and (max-width: 620px) {
+	.logo__link img {
+		max-width: 64px;
+		max-height: 64px;
+	}
+
 	input[type=text],
 	input[type=email],
 	input[type=tel],
@@ -1269,16 +1239,12 @@ textarea {
 }
 
 @media print {
-	.logo--mixed img.logo__img {
+	.logo__link img {
 		max-width: 64px;
 		max-height: 64px;
 	}
 
   nav.menu, div.logo__tagline, footer {
     display: none !important;
-  }
-
-  .container--outer {
-    box-shadow: none;
   }
 }
