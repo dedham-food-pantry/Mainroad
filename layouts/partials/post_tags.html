@@ -1,5 +1,5 @@
 {{- if .Params.tags }}
-<div class="post__tags tags clearfix">
+<div class="post__tags tags">
 	{{ partial "svg/tag.svg" (dict "class" "tags__badge") }}
 	<ul class="tags__list">
 		{{- range .Params.tags }}

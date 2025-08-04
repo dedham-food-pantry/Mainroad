@@ -1,4 +1,4 @@
-<footer class="container">
+<footer>
 	{{ partial "footer_links.html" . }}
 	<div class="footer__copyright">
 		&copy; {{ now.Format "2006" }} {{ .Site.Params.copyright | default .Site.Title }} {{ T "footer_credits" | safeHTML }}

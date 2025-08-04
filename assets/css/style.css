@@ -60,15 +60,8 @@ body {
 }
 
 .container {
-	position: relative;
-	width: 100%;
 	max-width: 1080px;
-	margin: 0 auto;
-}
-
-.wrapper {
-	padding: 25px;
-	background: #fff;
+	margin-left: 1em;
 }
 
 .flex {
@@ -97,21 +90,6 @@ body {
 	-webkit-order: 0;
 	order: 0;
 	margin: 0 2.5% 0 0;
-}
-
-.clearfix {
-	display: block;
-}
-
-.clearfix::after {
-	display: block;
-	height: 0;
-	padding: 0;
-	margin: 0;
-	clear: both;
-	line-height: 0;
-	visibility: hidden;
-	content: "";
 }
 
 input,
@@ -381,6 +359,7 @@ select {
 /* Header */
 nav {
 	border-bottom: 5px solid {{ $highlightColor }};
+	margin-bottom: 1em;
 }
 
 .logo__link {
@@ -520,11 +499,6 @@ nav.menu a {
 .main__title {
 	font-size: 28px;
 	font-size: 1.75rem;
-}
-
-.main__content {
-	margin-bottom: 20px;
-	margin-bottom: 1.25rem;
 }
 
 .meta {
@@ -1115,7 +1089,6 @@ footer a:hover {
 
 /* Media Queries */
 @media screen and (max-width: 900px) {
-	.wrapper,
 	.logo {
 		padding: 20px;
 	}
@@ -1136,10 +1109,6 @@ footer a:hover {
 }
 
 @media screen and (max-width: 767px) {
-	.wrapper {
-		display: block;
-	}
-
 	.sidebar {
 		float: none;
 		width: 100%;

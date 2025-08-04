@@ -48,19 +48,15 @@
 </head>
 <body>
 	{{ block "header" . }}{{ partial "header.html" . }}{{ end }}
-	<div class="container container--outer">
-		<div class="wrapper flex">
-			<div class="primary">
-			{{ block "main" . }}
-				{{ with .Content }}
-				<div class="content main__content clearfix">
-					{{ . }}
-				</div>
-				{{ end }}
-			{{ end }}
-			</div>
-			{{ block "sidebar" . }}{{ partial "sidebar.html" . }}{{ end }}
+	<div class="container flex">
+		{{ block "main" . }}
+		{{ with .Content }}
+		<div class="content">
+			{{ . }}
 		</div>
+		{{ end }}
+		{{ end }}
+		{{ block "sidebar" . }}{{ partial "sidebar.html" . }}{{ end }}
 	</div>
 	{{ block "footer" . }}{{ partial "footer.html" . }}{{ end }}
 {{ range .Site.Params.customJS -}}
