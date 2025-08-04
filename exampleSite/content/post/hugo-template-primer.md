@@ -298,7 +298,6 @@ For instance, you might declare:
 ```yaml
 params:
   CopyrightHTML: "Copyright &#xA9; 2013 John Doe. All Rights Reserved."
-  TwitterUser: "spf13"
   SidebarRecentLimit: 5
 ```
 
@@ -319,11 +318,9 @@ is to use "with" instead. With rebinds the context `.` within its scope,
 and skips the block if the variable is absent:
 
 ```
-{{with .Site.Params.TwitterUser}}<span class="twitter">
-<a href="https://twitter.com/{{.}}" rel="author">
-<img src="/images/twitter.png" width="48" height="48" title="Twitter: {{.}}"
-alt="Twitter"></a>
-</span>{{end}}
+{{with .Site.Params.CopyrightHTML}}<footer>
+<div class="text-center">{{.}}</div>
+</footer>{{end}}
 ```
 
 Finally, if you want to pull "magic constants" out of your layouts, you can do

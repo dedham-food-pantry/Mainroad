@@ -176,7 +176,6 @@ sections in the example below.
 [Params.widgets.social]
   # Enable parts of social widget
   facebook = "username"
-  twitter = "username"
   instagram = "username"
   linkedin = "username"
   telegram = "username"

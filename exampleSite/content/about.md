@@ -22,7 +22,7 @@ Main features:
 * Widgetized sidebar
 * Translations. Over 15 languages and counting
 * Configurable theme settings (sidebar position, author box, post navigation, highlight color) via config.toml
-* Hugo internal templates (Open Graph, Schema, Twitter Cards, Disqus, Google Analytics)
+* Hugo internal templates (Open Graph, Schema, Disqus, Google Analytics)
 * Wide cross-browser compatibility
   * Desktop: IE11+, Chrome, Firefox, Safari
   * Mobile: Android browser (on Android 4.4+), Safari (on iOS 7+), Google Chrome, Opera mini

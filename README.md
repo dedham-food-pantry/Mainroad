@@ -14,7 +14,7 @@
 + Widgetized sidebar
 + Translations. Over 15 languages and counting
 + Configurable theme settings (sidebar position, author box, post navigation, highlight color) via `config.toml`
-+ Hugo internal templates (Open Graph, Schema, Twitter Cards, Disqus, Google Analytics)
++ Hugo internal templates (Open Graph, Schema, Disqus, Google Analytics)
 + Wide cross-browser compatibility
   + *Desktop: IE11+, Chrome, Firefox, Safari*
   + *Mobile: Android browser (on Android 4.4+), Safari (on iOS 7+), Google Chrome, Opera mini*
@@ -74,7 +74,6 @@ googleAnalytics = "" # DEPRECATED! Use .Services.googleAnalytics.ID
   copyright = "John Doe" # Footer copyright holder, otherwise will use site title
   opengraph = true # Enable OpenGraph if true
   schema = true # Enable Schema
-  twitter_cards = true # Enable Twitter Cards if true
   readmore = false # Show "Read more" button in list if true
   authorbox = true # Show authorbox at bottom of pages if true
   toc = true # Enable Table of Contents
@@ -126,7 +125,6 @@ googleAnalytics = "" # DEPRECATED! Use .Services.googleAnalytics.ID
   cached = false # activate cache if true
   # Enable parts of social widget
   facebook = "username"
-  twitter = "username"
   instagram = "username"
   linkedin = "username"
   telegram = "username"
