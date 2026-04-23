@@ -1217,3 +1217,15 @@ footer a:hover {
     display: none !important;
   }
 }
+
+.banner {
+	font-size: 20px;
+	margin: 1em;
+	padding: 1em;
+	background: pink;
+	border: 2px solid red;
+}
+
+.banner a {
+	text-decoration-line: underline;
+}

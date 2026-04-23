@@ -1,0 +1,6 @@
+{{- $bannerText := .Site.Params.banner.text -}}
+{{- $bannerLink := .Site.Params.banner.link -}}
+
+{{- if $bannerText }}
+<div class="banner"><a href="{{ $bannerLink }}">{{ $bannerText }}</a></div>
+{{- end }}
